@@ -1,29 +1,20 @@
-const route = require('koa-route');
+
+const Router = require('koa-router')();
 const Koa = require('koa');
-const serve = require('koa-static');
-const path = require('path');
 const App = new Koa();
+let user = require('./routes/user.js');
+let login = require('./routes/login')
 
-const main = ctx =>{
-  console.log("ctx.res",ctx.response)
-  ctx.response.type = "html";
-  ctx.response.body = '<a href="/">Index Page</a>'
-}
+/* 装载所有子路由
+let router = new Router();
+*/
 
-const about = ctx =>{
-  ctx.response.body = 'Hello World';
-}
-
-const mainStatic = serve(path.join(__dirname));
-
-const redirect = ctx =>{
-  ctx.response.redirect('/about');
-  ctx.response.body = `<a href="/">Index Page</a>`;
-}
-
-App.use(mainStatic);
-App.use(route.get('/',main));
-App.use(route.get('/about',about));
-App.use(route.get('/redirect',redirect));
-
-App.listen(3080)
+Router.use('/',login.routes())
+Router.use('/user',user.routes())
+// 加载路由中间件
+App.use(Router.routes());
+let server = App.listen(3080,()=>{
+  let host = server.address().address;
+  let port = server.address().port;
+  console.log("[server]started http://%s:%s", host, port)
+})
