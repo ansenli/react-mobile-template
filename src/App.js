@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <div  className='App App-link'>432534543</div>
-      <Button type="warning" >yes333</Button>
+      <Button >yes333</Button>
     </div>
   );
 }

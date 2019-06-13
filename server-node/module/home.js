@@ -1,7 +1,7 @@
 module.exports = {
   "resCode":{
     "code":"success",
-    "message":"",
+    "message":"查询列表成功",
     "extraCode":"",
     "status":1,
   },
