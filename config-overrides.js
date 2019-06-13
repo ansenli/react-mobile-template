@@ -1,5 +1,4 @@
-const { override, fixBabelImports,addLessLoader,addWebpackAlias } = require('customize-cra');
-const rewireCssModules = require('react-app-rewire-css-modules');
+const { override, fixBabelImports,addLessLoader,addWebpackAlias,useBabelRc,addDecoratorsLegacy} = require('customize-cra');
 const path = require("path");
 process.env.GENERATE_SOURCEMAP = "false";
 module.exports = override(
@@ -16,4 +15,6 @@ module.exports = override(
     "Components": path.resolve(__dirname, "src/Components"),
     "Container": path.resolve(__dirname, "src/Container"),
   }),
+  useBabelRc(),
+  addDecoratorsLegacy(),// 修饰器
  );

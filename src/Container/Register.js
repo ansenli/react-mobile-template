@@ -2,16 +2,17 @@
 import React, { Component ,Fragment} from 'react'
 /* impr  */
 // import React, { PureComponent } from 'react'
+
 import { Button } from 'antd-mobile';
 
-class Login extends Component{
+class Register extends Component{
   render(){
     return (
       <Fragment>
-        <Button>login.....</Button>
+        <Button>Register.....</Button>
       </Fragment>
     )
   }
 }
 
-export default Login;
+export default Register;

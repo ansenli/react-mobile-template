@@ -1,12 +1,28 @@
-import React from 'react';
-import { Button } from 'antd-mobile';
-import  './App.less'
+import React, { Fragment} from 'react'
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
+
+import  './App.less';
+/* imd  */
+
+
+import Home from 'Container/Home';
+import Login from 'Container/Login';
+import Register from 'Container/Register';
+import User from 'Container/User';
+import AuthRoute from 'Components/AuthRoute'
 function App() {
   return (
-    <div>
-      <div  className='App App-link'>432534543</div>
-      <Button >yes333</Button>
-    </div>
+    <Fragment>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact component = {AuthRoute} ></Route>
+          <Route path="/home" component = {Home} ></Route>
+          <Route path="/login" component = {Login} ></Route>
+          <Route path="/register" component = {Register} ></Route>
+          <Route path="/user" component = {User} ></Route>
+        </Switch>
+      </BrowserRouter>
+    </Fragment>
   );
 }
 

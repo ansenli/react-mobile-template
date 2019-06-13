@@ -9,7 +9,7 @@ class Home extends Component{
   render(){
     return (
       <Fragment>
-        <Button>login.....</Button>
+        <Button>home.....</Button>
       </Fragment>
     )
   }
