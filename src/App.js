@@ -14,8 +14,9 @@ function App() {
   return (
     <Fragment>
       <BrowserRouter>
+        <AuthRoute></AuthRoute>
         <Switch>
-          <Route path="/" exact component = {AuthRoute} ></Route>
+          {/* <Route path="/" exact component = {} ></Route> */}
           <Route path="/home" component = {Home} ></Route>
           <Route path="/login" component = {Login} ></Route>
           <Route path="/register" component = {Register} ></Route>

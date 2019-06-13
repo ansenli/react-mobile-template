@@ -1,0 +1,5 @@
+const ASYNC_USERINFO = 'ASYNC_USERINFO';
+
+export {
+  ASYNC_USERINFO,
+}

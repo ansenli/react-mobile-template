@@ -1,0 +1,5 @@
+const ASYNC_HOMELIST = 'ASYNC_HOMELIST';
+
+export {
+  ASYNC_HOMELIST,
+}
