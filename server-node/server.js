@@ -2,17 +2,21 @@
 const Router = require('koa-router')();
 const Koa = require('koa');
 const App = new Koa();
-let user = require('./routes/user.js');
-let login = require('./routes/login')
 
-/* 装载所有子路由
-let router = new Router();
-*/
+/* 引入各个模块路由 */
+let user = require('./routes/user');
+let login = require('./routes/login');
+let home = require('./routes/home');
 
-Router.use('/',login.routes())
-Router.use('/user',user.routes())
-// 加载路由中间件
+/*装载所有子路由*/
+Router.use('/home',home.routes());
+Router.use('/login',login.routes());
+Router.use('/user',user.routes());
+
+/* 加载路由中间件 */
 App.use(Router.routes());
+
+/* 启动服务绑定端口 */
 let server = App.listen(3080,()=>{
   let host = server.address().address;
   let port = server.address().port;

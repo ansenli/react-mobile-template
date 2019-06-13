@@ -1,11 +1,14 @@
 module.exports = {
   "resCode":{
     "code":"success",
-    "message":"登录成功",
-    "extraCode":""
+    "message":"",
+    "extraCode":"",
+    "status":1,
   },
   "data":{
-    "status":1,
-    "id":123456789
+    "name":"yto-name",
+    "gender":1,
+    "age":18,
+    "address":"上海青浦区圆通科技运营前端组"
   }
 }

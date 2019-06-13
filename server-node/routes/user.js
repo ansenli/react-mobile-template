@@ -1,12 +1,8 @@
-const Router = require('koa-router');
-let router = new Router();
+const Router = require('koa-router')();
+let userReponse = require('../module/user');
 
-const main = ctx =>{
-  console.log("ctx.res",ctx.response)
-  ctx.response.type = "html";
-  ctx.response.body = '<a href="/">Index Page</a>'
-}
+Router.get('/user',ctx=>{
+  ctx.body = userReponse
+})
 
-router.get('/',main)
-
-module.exports = router;
+module.exports = Router;
