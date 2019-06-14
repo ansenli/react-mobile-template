@@ -1,7 +1,7 @@
 const Router = require('koa-router')();
 let loginReponse = require('../module/login');
 
-Router.get('/',ctx=>{
+Router.post('/',ctx=>{
   ctx.body = loginReponse
 })
 
