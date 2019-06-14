@@ -5,10 +5,14 @@ import React, { Component ,Fragment} from 'react'
 import { Button } from 'antd-mobile';
 
 class Login extends Component{
+  nextTap = ()=>{
+    const {history} = this.props;
+    history.push('/home')
+  }
   render(){
     return (
       <Fragment>
-        <Button>login.....</Button>
+        <Button onClick={this.nextTap}>login.....</Button>
       </Fragment>
     )
   }
