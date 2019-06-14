@@ -1,7 +1,11 @@
 import React, { Fragment} from 'react'
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import { Provider } from 'react-redux'
+import configStore from './store';
 
 import  './App.less';
+const store = configStore();
+
 /* imd  */
 
 
@@ -11,18 +15,21 @@ import Register from 'Container/Register';
 import User from 'Container/User';
 import AuthRoute from 'Components/AuthRoute'
 function App() {
+  console.log("store......",store)
   return (
     <Fragment>
-      <BrowserRouter>
-        <AuthRoute></AuthRoute>
-        <Switch>
-          {/* <Route path="/" exact component = {} ></Route> */}
-          <Route path="/home" component = {Home} ></Route>
-          <Route path="/login" component = {Login} ></Route>
-          <Route path="/register" component = {Register} ></Route>
-          <Route path="/user" component = {User} ></Route>
-        </Switch>
-      </BrowserRouter>
+      <Provider store = {store}>
+        <BrowserRouter>
+          <AuthRoute></AuthRoute>
+          <Switch>
+            {/* <Route path="/" exact component = {} ></Route> */}
+            <Route path="/home" component = {Home} ></Route>
+            <Route path="/login" component = {Login} ></Route>
+            <Route path="/register" component = {Register} ></Route>
+            <Route path="/user" component = {User} ></Route>
+          </Switch>
+        </BrowserRouter>
+      </Provider>
     </Fragment>
   );
 }
